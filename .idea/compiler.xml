@@ -7,10 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gateway-server" />
-        <module name="dynamic-gateway-nacos" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="dynamic-gateway-nacos" target="1.8" />
       <module name="gateway-server" target="1.8" />
     </bytecodeTargetLevel>
