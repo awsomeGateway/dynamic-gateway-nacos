@@ -4,15 +4,11 @@ import com.dynamic.gateway.model.GatewayPredicateDefinition;
 import com.dynamic.gateway.model.GatewayRouteDefinition;
 import com.dynamic.gateway.route.DynamicRouteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.core.CoreSubscriber;
-import reactor.core.Fuseable;
-import reactor.core.publisher.Operators;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -29,17 +25,6 @@ public class RouteController {
 
     @Autowired
     private DynamicRouteServiceImpl dynamicRouteService;
-
-    @Value("${nacos.dataId}")
-    private String dataId;
-
-    @Value("${nacos.group}")
-    private String group;
-
-    @GetMapping("test")
-    public String test(){
-        return dataId + "," + group;
-    }
 
     /**
      * 增加路由

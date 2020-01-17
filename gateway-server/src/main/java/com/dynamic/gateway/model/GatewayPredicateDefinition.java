@@ -1,5 +1,6 @@
 package com.dynamic.gateway.model;
 
+import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -7,10 +8,12 @@ import java.util.Map;
  * @author slh-nightBreeze
  * 路由断言定义模型
  */
+
+@Data
 public class GatewayPredicateDefinition {
 
     /**
-     * 断言对应的Name
+     * 断言Name
      */
     private String name;
 
@@ -19,19 +22,4 @@ public class GatewayPredicateDefinition {
      */
     private Map<String, String> args = new LinkedHashMap<>();
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Map<String, String> getArgs() {
-        return args;
-    }
-
-    public void setArgs(Map<String, String> args) {
-        this.args = args;
-    }
 }

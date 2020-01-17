@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
 
   handleClick = e => {
     history.push(e.key)
-}
+  }
 
   render () {
     return (
@@ -70,6 +70,18 @@ class Dashboard extends React.Component {
                     <MenuItem key="/dashboard/skyWalking">SkyWalking</MenuItem>
                     <MenuItem key="/dashboard/sentinel">Sentinel</MenuItem>
                   </SubMenu>
+                  <SubMenu
+                    key="sub2"
+                    title={
+                      <span>
+                      <Icon type="edit"/>
+                      <span>路由管理</span>
+                    </span>
+                    }
+                  >
+                    <MenuItem key="/dashboard/skyWalking">filter</MenuItem>
+                    <MenuItem key="/dashboard/nacos">predicate</MenuItem>
+                  </SubMenu>
                 </Menu>
               </Sider>
               <Layout className="right-sider">
@@ -77,9 +89,11 @@ class Dashboard extends React.Component {
 
                   {/* 路由*/}
                   <Switch>
-                    <Route exact path="/dashboard/nacos" component={Platform} />
-                    <Route exact path="/dashboard/skyWalking" component={Platform} />
-                    <Route exact path="/dashboard/sentinel" component={Platform} />
+                    <Route exact path="/dashboard/nacos" component={Platform}/>
+                    <Route exact path="/dashboard/skyWalking"
+                           component={Platform}/>
+                    <Route exact path="/dashboard/sentinel"
+                           component={Platform}/>
                   </Switch>
                 </Content>
               </Layout>
@@ -90,7 +104,8 @@ class Dashboard extends React.Component {
     )
   }
 }
+
 const TODOPage = () => {
-  return <div className="todo">功能正在开发中</div>;
-};
+  return <div className="todo">功能正在开发中</div>
+}
 export default Dashboard
